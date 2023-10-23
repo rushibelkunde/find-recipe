@@ -16,7 +16,9 @@ const router = createBrowserRouter([
       {path:"/error", element: <Error/> }
     ]
   }
-])
+],{
+  basename: "/find-recipe"
+})
 
 function App() {
   return (
