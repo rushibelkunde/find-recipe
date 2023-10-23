@@ -5,10 +5,11 @@ import { useNavigate } from 'react-router-dom'
 const Recipe_Card = ({ thumb, label, type, uri }) => {
     const navigate = useNavigate()
 
+    // after clicking on recipe navigating to /recipe-detail page with id
     const handleRecipeClick = () => {
-        var parts = uri.split('#');
+        var parts = uri.split('#'); //id is after # so spliting it
         if (parts.length > 1) {
-            var id = parts[1];
+            var id = parts[1]; // getting recipe id from uri
             navigate(`/recipe-detail/${id}`)
         } else {
             console.log("URL does not contain a fragment identifier.");

@@ -7,6 +7,8 @@ import Recipe_Detail from './components/Recipe_Detail/Recipe_Detail';
 import { CustomContext } from './CustomContext';
 import Error from './Error/Error';
 
+
+//routes
 const router = createBrowserRouter([
   {
     path: "/", element: <Navbar />, children: [

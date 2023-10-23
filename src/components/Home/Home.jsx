@@ -9,6 +9,8 @@ const Home = () => {
     const navigate = useNavigate()
     const url = `https://api.edamam.com/api/recipes/v2?type=public&q=${searchText}&app_id=${process.env.REACT_APP_APP_ID}&app_key=${process.env.REACT_APP_APP_KEY}`;
 
+
+    // Fetching recipes
     const fetchRecipes = async () => {
         try{
             const response = await fetch(url, {
@@ -27,6 +29,7 @@ const Home = () => {
         
     }
 
+    // fetching recipes whenever key pressed
     useEffect(() => {
         fetchRecipes()
     }, [searchText])

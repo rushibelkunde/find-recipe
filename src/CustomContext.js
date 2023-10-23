@@ -2,6 +2,7 @@ import { createContext, useContext, useEffect, useState } from "react";
 
 const InputContext = createContext()
 
+// custom hook to get all the states defined in context across all components
 export const useValue = ()=> {
     return useContext(InputContext)
 }
@@ -10,7 +11,7 @@ export const useValue = ()=> {
 export const CustomContext = ({children})=>{
 
     const [searchText, setSearchText] = useState("")
-    const [data, setData] = useState({})
+    const [data, setData] = useState({}) //api response data
     const [favRecipes, setFavRecipes] = useState([])
     const [error, setError] = useState("")
 

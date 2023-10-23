@@ -13,9 +13,12 @@ const Recipe_Detail = () => {
   const { id } = useParams()
   const navigate = useNavigate()
 
+  // fetch recipe by id
   const url = `https://api.edamam.com/api/recipes/v2/${id}?type=public&app_id=${process.env.REACT_APP_APP_ID}&app_key=${process.env.REACT_APP_APP_KEY}`
 
 
+
+  // add recipe to fav
   const addToFav = (recipe, id) => {
     const updatedFavRecipes = [...favRecipes, {id, ...recipe}]
     setFavRecipes((prev) => [...prev, { id, ...recipe }])
@@ -26,6 +29,7 @@ const Recipe_Detail = () => {
     setToggleButton(true)
   }
 
+  // remove recipe from fav
   const removeFromFav = (id) => {
     const filtered = favRecipes.filter((i) => i.id !== id)
     setFavRecipes(filtered)
@@ -37,7 +41,7 @@ const Recipe_Detail = () => {
 
   }
 
-
+  // fetch recipe detailed
   const fetchRecipe = async () => {
     try{
     const response = await fetch(url)
@@ -56,11 +60,12 @@ const Recipe_Detail = () => {
     }
   }
 
+  // fetch at intial render
   useEffect(() => {
       fetchRecipe()
   }, [])
 
-
+  // toggle add and remove button whenever button pressed
   useEffect(() => {
     const index = favRecipes.findIndex((i) => i.id === id)
     console.log(index)
