@@ -36,7 +36,7 @@ const Home = () => {
 
 
     return (
-        <div className='container m-auto flex  flex-wrap justify-around gap-2'>
+        <div className='container m-auto flex  flex-wrap justify-around gap-4'>
 
             {(data.count == 0 ?
                 <h1 className=' font-bold text-4xl text-center mt-10'>Whats on your mind?</h1>

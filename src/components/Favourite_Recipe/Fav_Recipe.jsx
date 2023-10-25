@@ -16,10 +16,10 @@ const Fav_Recipe = () => {
 
       <h1 className='text-center font-bold text-4xl mt-5 text-red-500'>Favourite Recipes</h1>
 
-      <button className='bg-black text-white p-2 rounded-xl' onClick={handleReset}>Reset</button>
+      <button className='bg-black text-white p-2 rounded-xl ml-4' onClick={handleReset}>Reset</button>
 
       {favRecipes?
-      <div className='flex items-center justify-between flex-wrap mb-3'>
+      <div className='container m-auto flex  flex-wrap justify-around gap-4 mt-5'>
       {favRecipes?.map((r) => (
         <Recipe_Card label={r.label} thumb={r.image} type={r.cuisineType[0]} uri={r.uri} />
       ))}
